@@ -63,9 +63,12 @@ void delete(int *q, int *front, int *count)
 
 void display(int *q, int front, int count)
 {
-       for (int i = 0; i < count; i++)
+       int i = front;
+       while (count--)
        {
-              printf("%d\t", q[(i + front) % size]);
+              printf("%d\t", q[i]);
+              i++;
+              i %= size;
        }
 }
 
