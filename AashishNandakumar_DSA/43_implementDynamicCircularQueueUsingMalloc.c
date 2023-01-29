@@ -30,7 +30,6 @@ int *insert(int *q, int *rear, int *front, int *count)
                             p[i] = q[j];
                      }
                      for (j = 0; j < *front; j++, i++)
-                            ;
                      {
                             p[i] = q[j];
                      }
