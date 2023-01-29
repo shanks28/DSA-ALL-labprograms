@@ -54,8 +54,6 @@ int main()
     Accept(m1, &m, &n);
     printf("Displaying matrix\n");
     Display(m1, m, n);
-    printf("Displaying Transpose matrix\n");
-    TAccept(m2, &m, &n);
-
+    
     return 0;
 }
