@@ -36,10 +36,10 @@ int Add(struct Poly p[], struct Poly q[], struct Poly res[], int m, int n)
             res[z].coeff = p[i].coeff;
             res[z++].expo = p[i++].expo;
         }
-        else if (q[i].expo > p[i].expo)
+        else if (q[j].expo > p[i].expo)
         {
-            res[z].coeff = q[i].coeff;
-            res[z++].expo = q[i++].expo;
+            res[z].coeff = q[j].coeff;
+            res[z++].expo = q[j++].expo;
         }
         else
         {
