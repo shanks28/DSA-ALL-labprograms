@@ -30,17 +30,11 @@ int *insert(int *q, int *rear, int *front, int *count)
                             p[i] = q[j];
                      }
                      for (j = 0; j < *front; j++, i++)
-                            ;
                      {
                             p[i] = q[j];
                      }
               }
 
-              /*for(int i=0;i<*count;i++)
-              {
-                     p[i]=q[i+(*front)%(size/2)];
-              }
-              */
               *front = 0;
               *rear = (size / 2) - 1;
 
@@ -48,7 +42,7 @@ int *insert(int *q, int *rear, int *front, int *count)
               (*rear)++;
               (*rear) %= size;
               p[*rear] = ele;
-              // free(q);
+              
               return p;
        }
        else
@@ -61,13 +55,13 @@ int *insert(int *q, int *rear, int *front, int *count)
        }
 }
 
-void delete(int *temp, int *front, int *count)
+void delete(int *q, int *front, int *count)
 {
        if (*count == 0)
               printf("no elements to delete");
        else
        {
-              printf("%d will be deleted", temp[*front]);
+              printf("%d will be deleted", q[*front]);
               (*front)++;
               (*front) %= size;
 
@@ -89,7 +83,7 @@ void display(int *q, int front, int count)
 int main()
 {
        int rear = size - 1, front = 0, count = 0;
-       int *q, *temp;
+       int *q;
        q = (int *)malloc(sizeof(int) * size);
        int choice;
        while (1)

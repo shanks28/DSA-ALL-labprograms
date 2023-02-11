@@ -20,7 +20,7 @@ void push(int s[max], int *top)
 
 void pop(int s[max], int *top)
 {
-    if (s[*top] != -1)
+    if ((*top) != -1)
     {
         printf("%d will be popped!\n", s[*top]);
         (*top)--;
