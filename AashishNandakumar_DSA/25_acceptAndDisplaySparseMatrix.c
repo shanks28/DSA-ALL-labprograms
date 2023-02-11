@@ -27,8 +27,8 @@ void Accept(S m1[], int *m, int *n)
         }
     }
     m1[0].value = k - 1;
-    m1[0].col = *m;
-    m1[0].row = *n;
+    m1[0].col = *n;
+    m1[0].row = *m;
 }
 
 void Display(S m1[], int m, int n)
@@ -54,8 +54,6 @@ int main()
     Accept(m1, &m, &n);
     printf("Displaying matrix\n");
     Display(m1, m, n);
-    printf("Displaying Transpose matrix\n");
-    TAccept(m2, &m, &n);
-
+    
     return 0;
 }

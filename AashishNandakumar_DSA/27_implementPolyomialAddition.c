@@ -36,10 +36,10 @@ int Add(struct Poly p[], struct Poly q[], struct Poly res[], int m, int n)
             res[z].coeff = p[i].coeff;
             res[z++].expo = p[i++].expo;
         }
-        else if (q[i].expo > p[i].expo)
+        else if (q[j].expo > p[i].expo)
         {
-            res[z].coeff = q[i].coeff;
-            res[z++].expo = q[i++].expo;
+            res[z].coeff = q[j].coeff;
+            res[z++].expo = q[j++].expo;
         }
         else
         {
@@ -57,13 +57,13 @@ int Add(struct Poly p[], struct Poly q[], struct Poly res[], int m, int n)
         res[z].coeff = q[j].coeff;
         res[z++].expo = q[j].expo;
     }
-    // printf("%d", z);
+    
     return z;
 }
 
 void Display(struct Poly res[], int z)
 {
-    for (int i = 0; i < z - 1; z++)
+    for (int i = 0; i < z - 1; i++)
     {
         if (res[i].coeff)
             printf("+%dX^%d", res[i].coeff, res[i].expo);
@@ -78,6 +78,7 @@ int main()
     int m = 0, n = 0, z = 0;
     accept(p, q, &m, &n);
     z = Add(p, q, res, m, n);
+    
     Display(res, z);
 
     return 0;
